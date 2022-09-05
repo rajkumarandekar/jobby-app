@@ -4,18 +4,20 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-right: 0px;
 }
 .card-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #272727;
-  padding: 65px;
+  padding: 45px;
   border-radius: 15px;
 }
 .website-logo {
   width: 150px;
   margin-bottom: 25px;
+  margin-right: 140px;
 }
 .form-container {
   display: flex;

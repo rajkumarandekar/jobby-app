@@ -188,29 +188,26 @@ class JobProfileSection extends Component {
   }
 
   renderFailureView = () => (
-    <>
-      <div className="failure-container">
-        <img
-          src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
-          alt="failure view"
-          className="failure-view"
-        />
-        <h1 className="failure-heading">Oops! Something Went Wrong</h1>
-        <p className="failure-desc">
-          We cannot seem to find the page you are looking for
-        </p>
-      </div>
-      <div>
-        <button
-          type="button"
-          testid="button"
-          className="jobs-failure-button"
-          onClick={this.getJobDetails}
-        >
-          Retry
-        </button>
-      </div>
-    </>
+    <div className="failure-container">
+      <img
+        src="https://assets.ccbp.in/frontend/react-js/failure-img.png"
+        alt="failure view"
+        className="failure-view"
+      />
+      <h1 className="failure-heading">Oops! Something Went Wrong</h1>
+      <p className="failure-desc">
+        We cannot seem to find the page you are looking for
+      </p>
+
+      <button
+        type="button"
+        testid="button"
+        className="jobs-failure-button"
+        onClick={this.getJobDetails}
+      >
+        Retry
+      </button>
+    </div>
   )
 
   renderLoadingView = () => (

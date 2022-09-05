@@ -63,6 +63,7 @@ class JobItemDetails extends Component {
     this.setState({
       apiStatus: apiStatusConstants.inProgress,
     })
+
     const {match} = this.props
     const {params} = match
     const {id} = params
@@ -114,67 +115,69 @@ class JobItemDetails extends Component {
 
     return (
       <div className="full-job-item-container">
-        <li>
-          <div className="job-items-container">
-            <div className="logo-image-container">
-              <img
-                src={companyLogoUrl}
-                alt="job details company logo"
-                className="company-logo-justify"
-              />
-              <div className="title-container">
-                <h1 className="company-title-head">{title}</h1>
-                <div className="rating-container">
-                  <AiFillStar className="star-icon" />
-                  <p className="count-rating">{rating}</p>
-                </div>
+        <div className="job-items-container">
+          <div className="logo-image-container">
+            <img
+              src={companyLogoUrl}
+              alt="job details company logo"
+              className="company-logo-justify"
+            />
+            <div className="title-container">
+              <h1 className="company-title-head">{title}</h1>
+              <div className="rating-container">
+                <AiFillStar className="star-icon" />
+                <p className="count-rating">{rating}</p>
               </div>
-            </div>
-            <div className="location-type-salary-container">
-              <div className="location-container">
-                <div className="responsive">
-                  <GoLocation className="location-logo" />
-                  <p className="location-desc">{location}</p>
-                </div>
-                <div className="responsive">
-                  <BsBriefcaseFill className="location-logo-brief" />
-                  <p className="location-desc">{employmentType}</p>
-                </div>
-              </div>
-              <p className="package-desc">{packagePerAnnum}</p>
-            </div>
-            <hr className="line" />
-            <div className="description-container">
-              <h1 className="desc-heading">Description</h1>
-              <a className="visit-link" href={companyWebsiteUrl}>
-                Visit
-                <BiLinkExternal className="bi-link" />
-              </a>
-            </div>
-            <p className="job-story-desc">{jobDescription}</p>
-            <h1 className="skill-heading">Skills</h1>
-            <ul className="skill-container">
-              {skills.map(eachSkill => (
-                <SkillsCard key={eachSkill.id} skillDetails={eachSkill} />
-              ))}
-            </ul>
-            <h1 className="life-company-heading">Life at company</h1>
-            <div className="life-at-company-container">
-              <p className="life-company-desc">{description}</p>
-              <img
-                src={imageUrl}
-                alt="life at company"
-                className="company-logo"
-              />
             </div>
           </div>
-          <h1 className="similar-job-heading">Similar Jobs</h1>
-          <ul className="similar-cards">
-            {similarJobItemList.map(eachItem => (
-              <SimilarJobItem key={eachItem.id} jobDetails={eachItem} />
+
+          <div className="location-type-salary-container">
+            <div className="location-container">
+              <div className="responsive">
+                <GoLocation className="location-logo" />
+                <p className="location-desc">{location}</p>
+              </div>
+              <div className="responsive">
+                <BsBriefcaseFill className="location-logo-brief" />
+                <p className="location-desc">{employmentType}</p>
+              </div>
+            </div>
+            <p className="package-desc">{packagePerAnnum}</p>
+          </div>
+          <hr className="line" />
+          <div className="description-container">
+            <h1 className="desc-heading">Description</h1>
+            <a className="visit-link" href={companyWebsiteUrl}>
+              Visit
+              <BiLinkExternal className="bi-link" />
+            </a>
+          </div>
+
+          <p className="job-story-desc">{jobDescription}</p>
+          <h1 className="skill-heading">Skills</h1>
+          <ul className="skill-container">
+            {skills.map(eachSkill => (
+              <SkillsCard key={eachSkill.id} skillDetails={eachSkill} />
             ))}
           </ul>
-        </li>
+
+          <h1 className="life-company-heading">Life at company</h1>
+          <div className="life-at-company-container">
+            <p className="life-company-desc">{description}</p>
+            <img
+              src={imageUrl}
+              alt="life at company"
+              className="company-logo"
+            />
+          </div>
+        </div>
+
+        <h1 className="similar-job-heading">Similar Jobs</h1>
+        <ul className="similar-cards">
+          {similarJobItemList.map(eachItem => (
+            <SimilarJobItem key={eachItem.id} jobDetails={eachItem} />
+          ))}
+        </ul>
       </div>
     )
   }
